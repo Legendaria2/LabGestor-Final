@@ -8,7 +8,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-@import url(../fonts/stylesheet.css);
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 html {
   line-height: 1.15;
@@ -658,10 +659,11 @@ html {
   transition: 0.3s all;
 }
 
-html,
-body {
-  font-family: 'Inter', sans-serif;
+h1,
+a{
+  font-family: "Lexend Deca", sans-serif;
 }
+
 
 h1,
 h2,
@@ -673,6 +675,7 @@ p,
 ul,
 a,
 button {
+  font-family: "Comfortaa", sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -1027,9 +1030,10 @@ body {
 }
 
 .logo {
-  background-image: url(../img/svg/Logo.svg);
-  width: 49px;
-  height: 49px;
+  background-image: url(../img/svg/2.png);
+  width: 120px;
+  height: 60px;
+  background-size: cover;
 }
 
 .menu-toggle {
@@ -1051,13 +1055,13 @@ body {
 }
 
 .document {
-  background-image: url(../img/svg/Bulk/Document-white.svg);
+  background-image: url(../img/svg/dropbox.svg);
   width: 24px;
   height: 24px;
 }
 
 .folder {
-  background-image: url(../img/svg/Bulk/Folder-white.svg);
+  background-image: url(../img/svg/Bulk/i);
   width: 24px;
   height: 24px;
 }
@@ -1993,7 +1997,7 @@ label {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: #0061f7 !important;
+  background-color: #205375 !important;
   width: 253px;
   padding: 20px 15px 37px 20px;
   -webkit-transition: 0.5s all;
@@ -2140,12 +2144,12 @@ label {
   color: #FFFFFF;
 }
 
-.sidebar-user__subtitle {
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 1.5;
+.sidebar-user__subtitle{
+  font-weight: 600;
+  font-size: 13px;
   letter-spacing: 0.86px;
   color: rgba(255, 255, 255, 0.5);
+  padding-left: 20px
 }
 
 .logo {
