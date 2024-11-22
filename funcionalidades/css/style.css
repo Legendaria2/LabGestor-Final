@@ -3500,6 +3500,21 @@ label {
 .moon-icon {
   display: none;
 }
+/* BOTON PRIMARIO AZUL */
+.btn-primary-labgestor{
+  background: var(--primary-light-color);
+  color: white;
+  padding: 10px 50px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-primary-labgestor:hover{
+  background: transparent;
+  color: white;
+  border:  2px solid var(--primary-color);
+}
 
 @media (min-width: 576px) {
   .container {
