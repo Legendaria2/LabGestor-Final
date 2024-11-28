@@ -1149,6 +1149,10 @@ Facts Style
   margin-left: 5px;
 }
 
+.fun-facts h2.mejora::after{
+  content: '%';
+}
+
 .fun-facts p {
   color: #fff;
   font-size: 15px;
@@ -1712,7 +1716,6 @@ body {
   }
   .header-area .main-nav .logo h1 {
     border-right: none;
-    font
   }
   .main-banner .item {
     padding: 80px 30px 120px 30px !important;
