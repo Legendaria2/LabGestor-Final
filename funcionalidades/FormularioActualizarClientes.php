@@ -225,7 +225,7 @@
             </div>
 
             <div class="mb-3 text-center">
-              <button type="submit" class="btn btn-success">Actualizar</button>
+              <button type="submit" class="btn btn-primary-labgestor">Actualizar</button>
               <a href="Clientes.php" class="btn btn-danger">Cancelar</a>
             </div>
           </form>
@@ -259,7 +259,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="plugins/feather.min.js"></script>
   <!-- Custom scripts -->
-  <script src="js/script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>

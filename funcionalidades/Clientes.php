@@ -213,7 +213,7 @@
                   <td class="text-center">
                     <form action="./Programas/EliminarClientes.php" method="post">
                       <input type="hidden" name="id_cliente" value=<?php echo $cliente[0] ?>>
-                      <button type="submit" class="btn btn-primary-labgestor">Eliminar</button>
+                      <button type="submit" >Eliminar</button>
                     </form>
                   </td>
 
@@ -221,7 +221,7 @@
                   <td class="text-center">
                     <form action="FormularioActualizarClientes.php" method="post">
                       <input type="hidden" name="id_cliente" value=<?php echo $cliente[0] ?>>
-                      <button type="submit" class="btn btn-primary-labgestor">Actualizar</button>
+                      <button type="submit" class="btn-primary-labgestor">Actualizar</button>
                     </form>
                   </td>
                 </tr>
