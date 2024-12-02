@@ -53,7 +53,7 @@ $result = mysqli_query($conexion, $sql);
 $usuario = mysqli_fetch_assoc($result);
 
 if (isset($usuario)) {
-  header("Location: dashboard.html");
+  header("Location: dashboard.php");
   echo '<script>
           alert("Has ingresado con exito");
           </script>';
