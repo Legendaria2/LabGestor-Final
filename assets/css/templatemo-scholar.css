@@ -31,6 +31,12 @@ font & reset css
 reset
 --------------------------------------------- 
 */
+
+:root{
+  --primary-blue: #205375;
+  --primary-orange: #F66B0E;
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
@@ -77,7 +83,6 @@ header, nav, section, article, aside, footer, hgroup {
 }
 
 html, body {
-  font-family: 'Poppins', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -117,6 +122,7 @@ Global Styles
 html,
 body {
   font-family: 'Poppins', sans-serif;
+  
 }
 
 ::selection {
@@ -152,7 +158,7 @@ body {
 }
 
 .section-heading h6 {
-  color: #7a6ad8;
+  color: var(--primary-orange);
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 600;
@@ -161,7 +167,7 @@ body {
 .main-button a {
   display: inline-block;
   background-color: #fff;
-  color: #7a6ad8;
+  color: var(--primary-orange);
   font-size: 14px;
   font-weight: 500;
   height: 40px;
@@ -171,8 +177,16 @@ body {
   transition: all .3s;
 }
 
+li.scroll-to-section:nth-child(6) > a:nth-child(1){
+  background-color: var(--primary-orange);
+}
+
+li.scroll-to-section:nth-child(6) > a:nth-child(1):hover{
+  background-color: var(--primary-orange);
+}
+
 .main-button a:hover {
-  background-color: #7a6ad8;
+  background-color: var(--primary-orange);
   color: #fff;
 }
 
@@ -285,7 +299,7 @@ Header Style
 */
 
 .background-header {
-  background-color: #7a6ad8 !important;
+  background-color: var(--primary-blue) !important;
   border-radius: 0px 0px 25px 25px;
   height: 80px!important;
   position: fixed!important;
@@ -327,12 +341,16 @@ Header Style
 
 .header-area .main-nav .logo h1 {
   font-size: 36px;
-  text-transform: uppercase;
   color: #fff;
   font-weight: 600;
   margin-right: 20px;
   padding-right: 20px;
   border-right: 1px solid rgba(250, 250, 250, 0.3);
+}
+
+.header-area .main-nav .logo h1 b{
+  color: var(--primary-orange);
+  font-weight: 600;
 }
 
 .background-header .main-nav .logo,
@@ -418,9 +436,6 @@ Header Style
   line-height: 80px;
 }
 
-.header-area .main-nav .nav li:hover a {
-  opacity: 0.8;
-}
 .header-area .main-nav .nav li a.active {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.10);
@@ -428,7 +443,7 @@ Header Style
 }
 
 .background-header .main-nav .nav li:hover a {
-  opacity: 0.8;
+  transform: scale(1.1);
 }
 .background-header .main-nav .nav li a.active {
   color: #fff;
@@ -667,7 +682,7 @@ Banner Style
 */
 
 .main-banner {
-  background-image: url(../images/banner-bg.jpg);
+  background-image: url(../images/banner-bg.png);
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -696,7 +711,7 @@ Banner Style
 }
 
 .main-banner .item span.category {
-  background-color: #7a6ad8;
+  background-color: var(--primary-orange);
   color: #fff;
   font-size: 14px;
   text-transform: uppercase;
@@ -731,7 +746,7 @@ Banner Style
 
 .main-banner .item .buttons .main-button a {
   font-size: 14px;
-  color: #7a6ad8;
+  color: var(--primary-orange);
   background-color: #fff;
   display: inline-block;
   height: 50px;
@@ -742,7 +757,7 @@ Banner Style
 }
 
 .main-banner .item .buttons .icon-button i {
-  color: #7a6ad8;
+  color: var(--primary-orange);
   background-color: #fff;
   display: inline-block;
   height: 50px;
@@ -815,11 +830,14 @@ Services Style
   display: inline-block;
   text-align: center;
   line-height: 190px;
-  background-color: #7a6ad8;
+  background-color: var(--primary-blue);
   border-radius: 50%;
   position: absolute;
   right: 0;
   top: -95px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .services .service-item .icon img {
@@ -830,10 +848,10 @@ Services Style
 .services .service-item .main-content {
   border-radius: 25px;
   padding: 80px 30px 50px 30px;
-  background-color: #f1f0fe;
   margin-bottom: 30px;
   margin-right: 80px;
   transition: all .4s;
+  background: #eee;
 }
 
 .services .service-item h4 {
@@ -842,11 +860,13 @@ Services Style
   margin-bottom: 15px;
   line-height: 30px;
   transition: all .4s;
+  color: var(--primary-orange);
 }
 
-.services .service-item p {
+.services .service-item li{
   color: #4a4a4a;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  list-style: disc;
 }
 
 /* 
@@ -869,7 +889,7 @@ About Style
   z-index: -1;
   width: 84%;
   height: 100%;
-  background-color: #f1f0fe;
+  background-color: #20537510;
   content: '';
   border-top-left-radius: 500px;
   border-bottom-left-radius: 500px;
@@ -878,7 +898,7 @@ About Style
 .accordion {
   margin-top: -40px;
   margin-bottom: -40px;
-  background-color: #7a6ad8;
+  background-color: var(--primary-blue);
   border-radius: 40px;
   padding: 80px 50px 50px 50px;
 }
@@ -897,7 +917,7 @@ About Style
 }
 
 .accordion-button:not(.collapsed) {
-  color: #7a6ad8;
+  color: var(--primary-orange);
   background-color: #fff;
 }
 
@@ -919,7 +939,7 @@ h2.accordion-header button {
   text-align: center;
   line-height: 30px;
   border-radius: 50%;
-  background-color: #7a6ad8;
+  background-color: var(--primary-orange);
   color: #fff;
 }
 
@@ -961,7 +981,7 @@ Courses Style
 }
 
 .event_filter {
-  background-color: #f1f0fe;
+  background-color: #eee;
   border-radius: 50px;
   padding: 15px 40px;
   list-style: none;
@@ -985,7 +1005,7 @@ Courses Style
 
 .event_filter li a.is_active,
 .event_filter li a:hover {
-  color: #7a6ad8;
+  color: var(--primary-orange);
 }
 
 .events_item .thumb {
@@ -1004,7 +1024,7 @@ Courses Style
   top: 30px;
   font-size: 14px;
   text-transform: uppercase;
-  color: #7a6ad8;
+  color: var(--primary-orange);
   background-color: rgba(250, 250, 250, 0.95);
   padding: 8px 20px;
   border-radius: 25px;
@@ -1054,7 +1074,7 @@ Courses Style
 }
 
 .events_item .down-content span.author {
-  color: #7a6ad8;
+  color: var(--primary-blue);
   font-size: 15px;
   display: inline-block;
   margin-bottom: 6px;
@@ -1067,7 +1087,7 @@ Courses Style
 }
 
 .events_item:hover .down-content h4 {
-  color: #7a6ad8;
+  color: var(--primary-orange);
 }
 
 .events_item:hover .thumb span.price {
@@ -1095,7 +1115,7 @@ Facts Style
   z-index: -1;
   width: 95%;
   height: 100%;
-  background-color: #7a6ad8;
+  background-color: var(--primary-orange);
   content: '';
   border-top-right-radius: 500px;
   border-bottom-right-radius: 500px;
@@ -1127,6 +1147,10 @@ Facts Style
 .fun-facts h2::after {
   content: '+';
   margin-left: 5px;
+}
+
+.fun-facts h2.mejora::after{
+  content: '%';
 }
 
 .fun-facts p {
@@ -1169,12 +1193,12 @@ Team Style
 .team-member .main-content {
   border-radius: 25px;
   padding: 140px 30px 40px 30px;
-  background-color: #f1f0fe;
+  background-color: #20537510;
   text-align: center;
 }
 
 .team-member .main-content span.category {
-  color: #7a6ad8;
+  color: var(--primary-orange);
   font-size: 15px;
 }
 
@@ -1192,7 +1216,7 @@ Team Style
 
 .team-member .main-content ul li a {
   background-color: #fff;
-  color: #7a6ad8;
+  color: var(--primary-orange);
   display: inline-block;
   text-align: center;
   line-height: 40px;
@@ -1204,7 +1228,7 @@ Team Style
 }
 
 .team-member .main-content ul li a:hover {
-  background-color: #7a6ad8;
+  background-color: var(--primary-orange);
   color: #fff;
 }
 
@@ -1229,7 +1253,7 @@ Testimonials Style
   z-index: -1;
   width: 65%;
   height: 100%;
-  background-color: #f1f0fe;
+  background-color: #20537510;
   content: '';
   border-top-left-radius: 500px;
   border-bottom-left-radius: 500px;
@@ -1246,7 +1270,8 @@ Testimonials Style
 }
 
 .testimonials .item {
-  background-color: #7a6ad8;
+  border: 1px solid #2053753f;
+  background: white;
   border-radius: 25px;
   padding: 80px;
 }
@@ -1254,7 +1279,7 @@ Testimonials Style
 .testimonials .item p {
   font-size: 18px;
   line-height: 40px;
-  color: #fff;
+  color: black;
   font-style: italic;
   font-weight: 300;
   margin-bottom: 40px;
@@ -1271,11 +1296,11 @@ Testimonials Style
   display: inline-block;
   margin-top: 20px;
   font-size: 15px;
-  color: #fff;
+  color: black;
 }
 
 .testimonials .item h4 {
-  color: #fff;
+  color: black;
   font-size: 22px;
   font-weight: 600;
   margin-top: 8px;
@@ -1296,7 +1321,7 @@ Testimonials Style
   line-height: 50px;
   font-size: 24px;
   display: inline-block;
-  color: #7a6ad8;
+  color: var(--primary-orange);
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.10);
@@ -1638,7 +1663,7 @@ Footer Style
 footer {
   margin-top: 150px;
   position: relative;
-  background-color: #7a6ad8;
+  background-color: var(--primary-blue);
   vertical-align: middle;
   min-height: 150px;
   border-radius: 150px 150px 0px 0px;
@@ -1787,7 +1812,7 @@ body {
     margin-top: 30px;
   }
   .about-us .main-button a {
-    background-color: #7a6ad8;
+    background-color: var(--primary-blue);
     color: #fff;
   }
   .courses {
