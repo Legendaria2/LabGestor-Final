@@ -57,13 +57,14 @@ if (isset($usuario)) {
   echo '<script>
           alert("Has ingresado con exito");
           </script>';
+  session_start();
+  $_SESSION["id_usuario"] = $usuario["id_usuario"];
+  $_SESSION["session_id"] = session_id();
 } else {
   echo "<script>
       alert('Por favor ingrese un usuario o contraseña validos');
       </script>";
 }
 
-session_start();
-$_SESSION["id_usuario"] = $usuario["id_usuario"];
-$_SESSION["session_id"] = session_id();
+
 ?>
