@@ -1,5 +1,5 @@
 <?php
-  require "Programas/verificarSession.php"
+  require "Programas/verificarSession.php";
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="sidebar-footer">
-        <a href="##" class="sidebar-user">
+        <a href="log-out.php" class="sidebar-user">
           <span class="icon setting">
           </span>
           <div class="sidebar-user-info">
