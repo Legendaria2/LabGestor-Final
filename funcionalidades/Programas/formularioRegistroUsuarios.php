@@ -1,10 +1,9 @@
 <?php
-require "Programas/verificarSession.php";
-require "Programas/conexionDB.php";
-
-$sql = 'select * from usuarios;';
-$result = mysqli_query($conexion, $sql);
+require "verificarSession.php";
+require "conexionDB.php";
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,7 @@ $result = mysqli_query($conexion, $sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Custom styles -->
     <!-- <link rel="stylesheet" href="./css/style.min.css"> -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 
 </head>
@@ -114,7 +113,7 @@ $result = mysqli_query($conexion, $sql);
 
                             <!-- Dreccion modulo de usuarios -->
                             <li>
-                                <a class="active" href="usuarios.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users">
+                                <a class="active" href="../usuarios.php"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-users">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                         <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
                                         <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
@@ -249,57 +248,81 @@ $result = mysqli_query($conexion, $sql);
             </nav>
             <!-- ! Main -->
             <main class="main users chart-page" id="skip-target">
-                <div class="container">
-                    <h2 class="main-title">Gestionar Usuarios</h2>
-                    <a href="Programas/formularioRegistroUsuarios.php" class="btn btn-primary mb-3">Registrar Usuario</a>
-                    <table id="listado-usuarios" class="table table-striped">
-                        <thead>
-                            <tr class="text-center">
-                                <th>Cedula</th>
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
-                                <th>Rol</th>
-                                <th>Firma Usuario</th>
-                                <th>Estado</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php while ($usuario = mysqli_fetch_assoc($result)): ?>
-                                <tr class="text-center">
-                                    <td><?= $usuario['id_usuario'] ?></td>
-                                    <td><?= $usuario['primer_nombre'] . " " . $usuario['segundo_nombre'] ?></td>
-                                    <td><?= $usuario['primer_apellido'] . " " . $usuario['segundo_apellido'] ?></td>
-                                    <td><?= $usuario['rol_usuario'] ?></td>
-                                    <td><?= $usuario['firma_usuario'] ?></td>
-                                    <td><?= $usuario['estado'] ?></td>
-                                    <td class="d-flex justify-content-center gap-2">
-                                        <!-- Boton de Editar -->
-                                        <form action="" method="post">
-                                            <input type="text" name="id_usuario" value=<?= $usuario['id_usuario'] ?> disable hidden>
-                                            <button type="submit" class="btn btn-success rounded-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-pencil">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
-                                                    <path d="M13.5 6.5l4 4" />
-                                                </svg></button>
-                                        </form>
+                <div class="container d-flex flex-column align-items-center">
+                    <h2 class="mb-5">Ingresar Usuario</h2>
+                    <!-- Formulario de registro de usuarios -->
+                    <form action="registrarUsuarios.php" method="post" class="w-50">
 
-                                        <!-- Boton de Borrar -->
-                                        <form action="" method="post">
-                                            <input type="text" name="id_usuario" value=<?= $usuario['id_usuario'] ?> disable hidden>
-                                            <button type="submit" class='btn btn-danger rounded-pill'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-trash">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M20 6a1 1 0 0 1 .117 1.993l-.117 .007h-.081l-.919 11a3 3 0 0 1 -2.824 2.995l-.176 .005h-8c-1.598 0 -2.904 -1.249 -2.992 -2.75l-.005 -.167l-.923 -11.083h-.08a1 1 0 0 1 -.117 -1.993l.117 -.007h16z" />
-                                                    <path d="M14 2a2 2 0 0 1 2 2a1 1 0 0 1 -1.993 .117l-.007 -.117h-4l-.007 .117a1 1 0 0 1 -1.993 -.117a2 2 0 0 1 1.85 -1.995l.15 -.005h4z" />
-                                                </svg></button>
-                                        </form>
+                        <div class="mb-3 row">
+                            <div class="col-lg-6">
+                                <label for="cedula" class="form-label">Cedula</label>
+                                <input type="text" required class="form-control" name="cedula">
+                            </div>
 
-                                    </td>
-                                </tr>
-                            <?php endwhile ?>
-                        </tbody>
+                            <div class="col-lg-6">
+                                <label for="correo" class="form-label">Correo Electronico</label>
+                                <input type="text" class="form-control" required name="correo">
+                            </div>
+                        </div>
 
-                    </table>
+                        <div class="mb-3 row">
+                            <div class="col-lg-6">
+                                <label for="primer-nombre" class="form-label">Primer Nombre</label>
+                                <input type="text" class="form-control" name="primer-nombre" required>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="segundo-nombre" class="form-label">Segundo Correo</label>
+                                <input type="text" class="form-control" name="segundo-nombre">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <div class="col-lg-6">
+                                <label for="primer-apellido" class="form-label">Primer Apellido</label>
+                                <input type="text" class="form-control" name="primer-apellido" required>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="segundo-apellido" class="form-label">Segundo Apellido</label>
+                                <input type="text" class="form-control" name="segundo-apellido">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <div class="col-lg-6">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="text" class="form-control" name="password" required>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="password-verify" class="form-label">Confirmacion Contraseña</label>
+                                <input type="text" class="form-control" name="password-verify" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <div class="col-lg-6">
+                                <label for="rol-usuario" class="form-label">Rol del Usuario</label>
+                                <select name="rol-usuario" class="form-select" required>
+                                    <option value="analista">Analista</option>
+                                    <option value="coordinador">Cordinador</option>
+                                </select>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label for="estado-actividad" class="form-label">Estado Actividad del Usuario</label>
+                                <select name="estado-actividad" class="form-select">
+                                    <option value="activo">Activo</option>
+                                    <option value="inactivo">Inactivo</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-success mt-5" type="submit">Registrar Usuario</button>
+                        </div>
+                    </form>
+
+
                 </div>
             </main>
 
@@ -314,7 +337,7 @@ $result = mysqli_query($conexion, $sql);
     <!-- Importamos el JS de bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Custom scripts -->
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 
