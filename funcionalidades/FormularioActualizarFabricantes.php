@@ -41,7 +41,7 @@ if (!$datos_fabricante) {
     <main>
         <div class="container p-5 w-50 border rounded-5 mt-5">
             <h1 class="text-center mb-4">Actualizar Fabricante</h1>
-            <form action="PGIT BRAMCHrogramas/ActualizarFabricantes.php" method="post" class="form">
+            <form action="Programas/ActualizarFabricantes.php" method="post" class="form">
 
                 <!-- Campo oculto para pasar el ID del fabricante -->
                 <input type="hidden" name="id_fabricante" value="<?php echo htmlspecialchars($id_fabricante); ?>">
