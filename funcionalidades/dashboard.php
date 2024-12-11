@@ -1,3 +1,7 @@
+<?php
+require "Programas/verificarSession.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +9,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elegant Dashboard | Dashboard</title>
+  <title></title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.min.css">
+  <!-- <link rel="stylesheet" href="./css/style.min.css"> -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -23,11 +26,11 @@
     <aside class="sidebar">
       <div class="sidebar-start">
         <div class="sidebar-head">
-          <a href="/" class="logo-wrapper" title="Home">
+          <a href="dashboard.php" class="logo-wrapper" title="Home">
             <span class="sr-only">Home</span>
             <span class="icon logo" aria-hidden="true"></span>
 
-          </a>
+          </a href="">
           <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
             <span class="sr-only">Toggle menu</span>
             <span class="icon menu-toggle" aria-hidden="true"></span>
@@ -35,36 +38,65 @@
         </div>
         <div class="sidebar-body">
           <ul class="sidebar-body-menu">
+
+            <!-- Direccion del Home -->
             <li>
-              <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+              <a class="active" href="dashboard.php"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg> Home</a>
             </li>
+
+            <!-- Direccion del modulo de Productos -->
             <li>
-              <a class="disable" href="/"><span class="icon document" aria-hidden="true"></span>Productos</a>
+              <a class="disable" href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-flask-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 2a1 1 0 0 1 0 2v5.674l.062 .03a7 7 0 0 1 3.85 5.174l.037 .262a7 7 0 0 1 -3.078 6.693a1 1 0 0 1 -.553 .167h-6.635a1 1 0 0 1 -.552 -.166a7 7 0 0 1 .807 -12.134l.062 -.028v-5.672a1 1 0 1 1 0 -2h6zm-2 2h-2v6.34a1 1 0 0 1 -.551 .894l-.116 .049a5 5 0 0 0 -2.92 2.717h9.172a5 5 0 0 0 -2.918 -2.715a1 1 0 0 1 -.667 -.943v-6.342z" /></svg> Productos</a>
             </li>
+
+            <!-- Direccion del modulo de registro de fabricantes -->
             <li>
-              <a class="disable" href="/"><span class="icon folder" aria-hidden="true"></span>Fabricantes</a>
+              <a class="disable" href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-building-factory-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21h18" /><path d="M5 21v-12l5 4v-4l5 4h4" /><path d="M19 21v-8l-1.436 -9.574a.5 .5 0 0 0 -.495 -.426h-1.145a.5 .5 0 0 0 -.494 .418l-1.43 8.582" /><path d="M9 17h1" /><path d="M14 17h1" /></svg> Fabricantes</a>
             </li>
+
+            <!-- Direccion del modulo de registro de clientes -->
             <li>
-              <a class="disable" href="/"><span class="icon image" aria-hidden="true"></span>Clientes</a>
+              <a class="disable" href="Clientes.php"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg> Clientes</a>
             </li>
+
+            <!-- Direccion de Generacion de Certificados -->
             <li>
-              <a class="disable" href="/"><span class="icon paper" aria-hidden="true"></span>Certificados</a>
+              <a class="disable" href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-notebook"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" /><path d="M13 8l2 0" /><path d="M13 12l2 0" /></svg> Certificados</a>
             </li>
+
+            <!-- Direccion de Gestion de Peticiones de Cambio -->
             <li>
-              <a class="disable" href="/"><span class="icon image" aria-hidden="true"></span>Peticiones de <br> Cambio </a>
+              <a class="disable" href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-edit"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg> Peticiones de <br> Cambio </a>
             </li>
+
+            <!-- Reenderizacion opccional dependiendo del rol del usuario -->
+            <?php if ($_SESSION['usuario']['rol_usuario'] === 'coordinador'): ?>
+              
+              <!-- Dreccion modulo de usuarios -->
+              <li>
+                <a class="disable" href="usuarios.php"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg> Usuarios</a>
+              </li>
+
+              <!-- Direccion de modulo Auditrack -->
+              <li>
+                <a class="disable" href="/"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-route-square"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 17h4v4h-4z" /><path d="M17 3h4v4h-4z" /><path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" /></svg> Auditrack</a>
+              </li>
+
+            <?php endif ?>
+
           </ul>
           <ul class="cat-sub-menu">
           </ul>
           </ul>
         </div>
       </div>
+
+      <!-- Boton para cerrar Sesion -->
       <div class="sidebar-footer">
         <a href="##" class="sidebar-user">
-          <span class="icon setting">
-          </span>
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="white"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
           <div class="sidebar-user-info">
-            <span class="sidebar-user__subtitle">Log out</span>
+            <span class="sidebar-user__subtitle">Cerrar Sesion</span> 
           </div>
         </a>
       </div>
@@ -74,27 +106,13 @@
       <nav class="main-nav--bg">
         <div class="container main-nav">
           <div class="main-nav-start">
-            <div class="search-wrapper">
-              <i data-feather="search" aria-hidden="true"></i>
-              <input type="text" placeholder="Enter keywords ..." required>
-            </div>
           </div>
           <div class="main-nav-end">
             <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
               <span class="sr-only">Toggle menu</span>
               <span class="icon menu-toggle--gray" aria-hidden="true"></span>
             </button>
-            <div class="lang-switcher-wrapper">
-              <button class="lang-switcher transparent-btn" type="button">
-                EN
-                <i data-feather="chevron-down" aria-hidden="true"></i>
-              </button>
-              <ul class="lang-menu dropdown">
-                <li><a href="##">English</a></li>
-                <li><a href="##">French</a></li>
-                <li><a href="##">Uzbek</a></li>
-              </ul>
-            </div>
+
             <button class="theme-switcher gray-circle-btn" type="button" title="Switch theme">
               <span class="sr-only">Switch theme</span>
               <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
@@ -175,78 +193,11 @@
       </nav>
       <!-- ! Main -->
       <main class="main users chart-page" id="skip-target">
-        <?php
-        include './Programas/conexionDB.php';
-
-        $sql = "SELECT * FROM clientes";
-        $result = mysqli_query($conexion, $sql);
-        $clientes = mysqli_fetch_all($result);
-        ?>
         <div class="container">
-          <h2 class="main-title text-center">Lista de Clientes</h2>
+          <h2 class="main-title">Aqui va el titulo de la seccion</h2>
         </div>
-        <div class="container my-5">
-          <div class="w-100 d-flex alig-items-center justify-content-between mb-4 ">
-            <a href="./Programas/IngresarClientes.php" class="btn btn-success">Registrar Clientes</a>
-          </div>
-
-
-          <!-- Se crea la tabla para reenderizar clientes -->
-          <table class="table table-striped table-bordered">
-            <!-- Se crea el encabezado de la tabla -->
-            <thead>
-              <!-- Se crea la fila para los encabezados de la tabla -->
-              <tr>
-                <!-- Se definen los encabezados -->
-                <th>Nombre del Cliente  </th>
-                <th>Direccion del Cliente </th>
-                <th>Eliminar Cliente </th>
-                <th>Editar Cliente </th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($clientes as $cliente): ?>
-                <tr>
-                  <td><?php echo $cliente[1] ?></td>
-                  <td><?php echo $cliente[2] ?></td>
-                  <!-- Boton para eliminar el cliente -->
-                  <td class="text-center">
-                    <form action="./Programas/EliminarClientes.php" method="post">
-                      <input type="hidden" name="id_cliente" value=<?php echo $cliente[0] ?>>
-                      <button type="submit" class="btn btn-primary-labgestor">Eliminar</button>
-                    </form>
-                  </td>
-
-                  <!-- Boton para actualizar el cliente -->
-                  <td class="text-center">
-                    <form action="FormularioActualizarClientes.php" method="post">
-                      <input type="hidden" name="id_cliente" value=<?php echo $cliente[0] ?>>
-                      <button type="submit" class="btn btn-primary-labgestor">Actualizar</button>
-                    </form>
-                  </td>
-                </tr>
-              <?php endforeach ?>
-            </tbody>
-          </table>
-
-        </div>
-        <? mysqli_close($conexion) ?>
       </main>
 
-      <!-- ! Footer -->
-      <footer class="footer">
-        <div class="container footer--flex">
-          <div class="footer-start">
-            <p>2021 © Elegant Dashboard - <a href="elegant-dashboard.com" target="_blank"
-                rel="noopener noreferrer">elegant-dashboard.com</a></p>
-          </div>
-          <ul class="footer-end">
-            <li><a href="##">About</a></li>
-            <li><a href="##">Support</a></li>
-            <li><a href="##">Puchase</a></li>
-          </ul>
-        </div>
-      </footer>
     </div>
 
   </div>
@@ -254,14 +205,8 @@
   <script src="./plugins/chart.min.js"></script>
   <!-- Icons library -->
   <script src="plugins/feather.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <!-- Custom scripts -->
   <script src="js/script.js"></script>
 </body>
 
 </html>
-
-<?php
-  session_destroy();
-  session_commit();
-?>
