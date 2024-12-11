@@ -3501,19 +3501,11 @@ label {
   display: none;
 }
 /* BOTON PRIMARIO AZUL */
-.btn-primary-labgestor{
-  background: var(--primary-light-color);
-  color: white;
-  padding: 10px 50px;
-  border: 2px solid transparent;
-  text-decoration: none;
-  font-weight: 500;
+i.pencil {
+  color:green;
 }
-
-.btn-primary-labgestor:hover{
-  background: transparent;
-  color: white;
-  border:  2px solid var(--primary-color);
+i {
+  color:red;
 }
 
 @media (min-width: 576px) {

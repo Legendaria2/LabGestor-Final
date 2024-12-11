@@ -8,6 +8,7 @@
   <title>Elegant Dashboard | Dashboard</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Custom styles -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.min.css">
@@ -192,40 +193,37 @@
 
 
           <!-- Se crea la tabla para reenderizar clientes -->
-          <table class="table table-striped table-bordered">
+          <table class="table table-bordered  border-dark text-center">
             <!-- Se crea el encabezado de la tabla -->
-            <thead>
+            <thead class="table-dark">
               <!-- Se crea la fila para los encabezados de la tabla -->
               <tr>
                 <!-- Se definen los encabezados -->
-                <th>Nombre del Cliente  </th>
+                <th>Nombre del Cliente </th>
                 <th>Direccion del Cliente </th>
-                <th>Eliminar Cliente </th>
-                <th>Editar Cliente </th>
+                <th>Opciones </th>
+                <!-- <th>Editar Cliente </th> -->
               </tr>
             </thead>
-            <tbody>
+            <tbody >
               <?php foreach ($clientes as $cliente): ?>
                 <tr>
                   <td><?php echo $cliente[1] ?></td>
                   <td><?php echo $cliente[2] ?></td>
                   <!-- Boton para eliminar el cliente -->
-                  <td class="text-center">
+                  <td class=" d-flex justify-content-evenly">
                     <form action="./Programas/EliminarClientes.php" method="post">
-                      <input type="hidden" name="id_cliente" value=<?php echo $cliente[0] ?>>
-                      <button type="submit" class="btn btn-primary-labgestor">Eliminar</button>
+                      <span data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
+                        <input type="hidden" name="id_cliente" value=<?php echo $cliente[0] ?>>
+                        <button type="submit" class="btn trash"><i class="fa-solid fa-trash"></i></button>
+                      </span>
                     </form>
-                  </td>
-
-                  <!-- Boton para actualizar el cliente -->
-                  <td class="text-center">
                     <form action="FormularioActualizarClientes.php" method="post">
                       <input type="hidden" name="id_cliente" value=<?php echo $cliente[0] ?>>
-                      <button type="submit" class="btn btn-primary-labgestor">Actualizar</button>
+                      <button type="submit" class="btn pencil"><i class="fa-solid fa-pencil"></i></button>
                     </form>
                   </td>
-                </tr>
-              <?php endforeach ?>
+                <?php endforeach ?>
             </tbody>
           </table>
 
